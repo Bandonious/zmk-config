@@ -88,11 +88,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&kp C_SLEEP  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans      &trans    &trans    &trans     &trans   &trans
-&none        &kp INS       &kp PSCRN     &none         &none         &trans                          &kp PG_UP   &trans    &kp UP    &trans     &kp N0   &trans
-&trans       &none         &none         &none         &trans        &none                           &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans       &none         &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &kp K_CALC  &trans    &trans    &trans     &trans   &trans
-                           &trans        &trans        &trans        &trans        &trans    &trans  &trans      &trans    &trans    &trans
+&kp C_SLEEP  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans            &trans    &trans    &trans     &trans   &trans
+&none        &kp INS       &kp PSCRN     &none         &none         &trans                          &kp PG_UP         &trans    &kp UP    &trans     &kp N0   &trans
+&trans       &none         &none         &none         &trans        &none                           &kp PG_DN         &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&trans       &none         &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &kp K_CALCULATOR  &trans    &trans    &trans     &trans   &trans
+                           &trans        &trans        &trans        &trans        &trans    &trans  &trans            &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
