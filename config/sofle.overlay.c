@@ -1,18 +1,13 @@
-/* Make the encoder fire once per detent (typical EC11: 20 detents, 2 pulses per detent) */
+/* Encoder resolution tuning */
 
 &left_encoder {
-  steps = <40>;
+  steps = <80>;
 };
 
 &right_encoder {
-  steps = <40>;
+  steps = <80>;
 };
 
 &sensors {
-  left_cfg {
-    triggers-per-rotation = <20>;
-  };
-  right_cfg {
-    triggers-per-rotation = <20>;
-  };
+  triggers-per-rotation = <20>;
 };
