@@ -11,7 +11,7 @@
         height = <32>;
     };
 };
-
 &{/chosen} {
     zmk,display = &oled;
 };
+
