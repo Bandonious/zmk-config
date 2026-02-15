@@ -1,0 +1,16 @@
+/ {
+  chosen {
+    zmk,battery = &vbatt;
+  };
+
+  vbatt: vbatt {
+    compatible = "zmk,battery-voltage-divider";
+    /* Pick the ADC channel your clone uses for VBAT sensing */
+    io-channels = <&adc 2>; /* <-- try 2 first, then 0, 1, 3 */
+
+    /* These two should match the divider resistors on the board.
+       Common clone values are 1M/1M (ratio 2) or 2M/1M (ratio 3). */
+    output-ohms = <1000000>; /* bottom resistor to GND */
+    full-ohms = <1000000>;   /* top resistor to VBAT */
+  };
+};
