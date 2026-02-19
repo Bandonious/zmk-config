@@ -42,7 +42,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <260>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };
     };
 
@@ -87,7 +87,7 @@
 &trans                &kp F1      &kp F2              &kp F3           &kp F4               &kp F5                                  &kp F6        &kp F7           &kp F8           &kp F9           &kp F10  &kp F11
 &kp NON_US_BACKSLASH  &kp PIPE    &kp LC(LEFT_ARROW)  &kp UP_ARROW     &kp LC(RIGHT_ARROW)  &kp MINUS                               &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none    &kp F12
 &kp CAPSLOCK          &caps_word  &kp LEFT_ARROW      &kp DOWN_ARROW   &kp RIGHT_ARROW      &kp UNDERSCORE                          &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none    &none
-&trans                &kp K_UNDO  &kp LEFT_BRACE      &kp RIGHT_BRACE  &kp LEFT_BRACKET     &kp RIGHT_BRACKET  &trans    &trans     &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans   &kp LOCKING_NUM
+&trans                &kp K_UNDO  &kp LEFT_BRACE      &kp RIGHT_BRACE  &kp LEFT_BRACKET     &kp RIGHT_BRACKET  &trans    &trans     &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans   &kp KP_NUMLOCK
                                   &kp K_REDO          &trans           &trans               &trans             &trans    &kp EQUAL  &trans        &kp SLASH        &kp KP_NUMBER_0  &kp KP_DOT
             >;
 
