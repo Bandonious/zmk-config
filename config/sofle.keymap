@@ -41,6 +41,16 @@
             #binding-cells = <0>;
             bindings = <&caps_word>, <&kp CAPS>;
         };
+
+        lt_bdx: lt_bdx {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_BDX";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <260>;
+            flavor = "tap-preferred";
+        };
     };
 
     combos {
@@ -66,11 +76,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&none           &kp N1              &kp N2              &kp N3                  &kp N4                  &kp N5                                                      &kp N6           &kp N7                 &kp N8                   &kp N9               &kp N0               &none
-&kp ESCAPE      &kp Q               &kp W               &kp F                   &kp P                   &kp B                                                       &kp J            &kp L                  &kp U                    &kp Y                &kp SEMICOLON        &none
-&CapWL          &mt_HRM LEFT_WIN A  &mt_HRM LEFT_ALT R  &mt_HRM LEFT_CONTROL S  &mt_HRM LEFT_CONTROL T  &kp G                                                       &kp M            &mt_HRM RIGHT_SHIFT N  &mt_HRM RIGHT_CONTROL E  &mt_HRM RIGHT_ALT I  &mt_HRM RIGHT_WIN O  &kp SQT
-&kp LEFT_SHIFT  &kp Z               &kp X               &kp C                   &kp D                   &kp V                     &kp LEFT_ALT    &kp C_PLAY_PAUSE  &kp K            &kp H                  &kp COMMA                &kp DOT              &kp FSLH             &kp EXCLAMATION
-                                    &kp LGUI            &kp LALT                &kp LCTRL               &mt_HRM LEFT_SHIFT SPACE  &lt 5 TAB       &lt 2 ENTER       &lt 3 BACKSPACE  &mt RIGHT_CONTROL DEL  &kp RALT                 &kp RGUI
+&none           &kp N1              &kp N2              &kp N3                  &kp N4                  &kp N5                                             &kp N6           &kp N7                 &kp N8                   &kp N9               &kp N0               &none
+&kp ESCAPE      &kp Q               &kp W               &kp F                   &kp P                   &kp B                                              &kp J            &kp L                  &kp U                    &kp Y                &kp SEMICOLON        &none
+&CapWL          &mt_HRM LEFT_WIN A  &mt_HRM LEFT_ALT R  &mt_HRM LEFT_CONTROL S  &mt_HRM LEFT_CONTROL T  &kp G                                              &kp M            &mt_HRM RIGHT_SHIFT N  &mt_HRM RIGHT_CONTROL E  &mt_HRM RIGHT_ALT I  &mt_HRM RIGHT_WIN O  &kp SQT
+&kp LEFT_SHIFT  &kp Z               &kp X               &kp C                   &kp D                   &kp V            &kp LEFT_ALT    &kp C_PLAY_PAUSE  &kp K            &kp H                  &kp COMMA                &kp DOT              &kp FSLH             &kp EXCLAMATION
+                                    &kp LGUI            &kp LALT                &lt_bdx 6 ESCAPE        &lt_bdx 1 SPACE  &lt 5 TAB       &lt 2 ENTER       &lt 3 BACKSPACE  &lt_bdx 4 DEL          &kp RALT                 &kp RGUI
             >;
 
             sensor-bindings =
