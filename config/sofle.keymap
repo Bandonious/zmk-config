@@ -22,8 +22,8 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <LOWER RAISE>;
-            then-layer = <ADJUST>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 
@@ -69,11 +69,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC       &kp N1              &kp N2    &kp N3              &kp N4                  &kp N5                                                      &kp N6                     &kp N7                   &kp N8               &kp N9    &kp N0               &none
-&kp GRAVE     &kp Q               &kp W     &kp F               &kp P                   &kp B                                                       &kp J                      &kp L                    &kp U                &kp Y     &kp SEMICOLON        &none
-&CapWL        &mt_HRM LEFT_WIN A  &kp R     &mt_HRM LEFT_ALT S  &mt_HRM LEFT_CONTROL T  &kp G                                                       &kp M                      &mt_HRM RIGHT_CONTROL N  &mt_HRM RIGHT_ALT E  &kp I     &mt_HRM RIGHT_WIN O  &kp SQT
-&kp LEFT_ALT  &kp Z               &kp X     &kp C               &kp D                   &kp V                     &kp LEFT_ALT    &kp C_PLAY_PAUSE  &kp K                      &kp H                    &kp COMMA            &kp DOT   &kp FSLH             &kp EXCLAMATION
-                                  &kp LGUI  &kp LALT            &kp LCTRL               &mt_HRM LEFT_SHIFT SPACE  &lt 1 TAB       &lt 2 ENTER       &mt RIGHT_SHIFT BACKSPACE  &mt RIGHT_CONTROL DEL    &kp RALT             &kp RGUI
+&none           &kp N1              &kp N2              &kp N3                  &kp N4                  &kp N5                                                      &kp N6                     &kp N7                 &kp N8                   &kp N9               &kp N0               &none
+&kp ESCAPE      &kp Q               &kp W               &kp F                   &kp P                   &kp B                                                       &kp J                      &kp L                  &kp U                    &kp Y                &kp SEMICOLON        &none
+&CapWL          &mt_HRM LEFT_WIN A  &mt_HRM LEFT_ALT R  &mt_HRM LEFT_CONTROL S  &mt_HRM LEFT_CONTROL T  &kp G                                                       &kp M                      &mt_HRM RIGHT_SHIFT N  &mt_HRM RIGHT_CONTROL E  &mt_HRM RIGHT_ALT I  &mt_HRM RIGHT_WIN O  &kp SQT
+&kp LEFT_SHIFT  &kp Z               &kp X               &kp C                   &kp D                   &kp V                     &kp LEFT_ALT    &kp C_PLAY_PAUSE  &kp K                      &kp H                  &kp COMMA                &kp DOT              &kp FSLH             &kp EXCLAMATION
+                                    &kp LGUI            &kp LALT                &kp LCTRL               &mt_HRM LEFT_SHIFT SPACE  &lt 1 TAB       &lt 2 ENTER       &mt RIGHT_SHIFT BACKSPACE  &mt RIGHT_CONTROL DEL  &kp RALT                 &kp RGUI
             >;
 
             sensor-bindings =
@@ -81,8 +81,8 @@
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        lower_layer {
-            display-name = "PUNKNUM";
+        layer_1 {
+            display-name = "MOUSE";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
@@ -94,19 +94,15 @@
 
             bindings = <
 &trans                &kp F1                 &kp F2              &kp F3          &kp F4               &kp F5                               &kp F6        &kp F7           &kp F8           &kp F9           &kp F10      &kp F11
-&kp BACKSLASH         &kp CARET              &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp AMPERSAND                        &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp HASH     &kp F12
-&kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp UNDERSCORE                       &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PERCENT  &none
+&none                 &kp CARET              &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp AMPERSAND                        &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp HASH     &kp F12
+&kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp UNDERSCORE                       &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PERCENT  &trans
 &kp LC(Z)             &kp LC(LS(Z))          &kp LC(C)           &kp LC(V)       &kp LEFT_BRACKET     &kp RIGHT_BRACKET  &trans    &trans  &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOLLAR   &kp KP_NUMLOCK
                                              &trans              &trans          &trans               &trans             &trans    &trans  &kp KP_EQUAL  &kp SLASH        &kp KP_NUMBER_0  &kp KP_DOT
             >;
-
-            sensor-bindings =
-                <&inc_dec_kp PAGE_UP PAGE_DOWN>,
-                <&inc_dec_kp K_NEXT K_PREVIOUS>;
         };
 
-        raise_layer {
-            display-name = "ACTIONS";
+        layer_2 {
+            display-name = "SYS";
 
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
@@ -122,13 +118,9 @@
 &bt BT_SEL 1  &bt BT_SEL 2  &none   &none   &none   &trans  &trans    &trans  &kp K_CALC  &trans    &trans    &trans     &trans   &to 3
                             &trans  &trans  &trans  &trans  &trans    &trans  &trans      &trans    &trans    &trans
             >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_BRI_INC C_BRI_DEC>,
-                <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        adjust_layer {
+        layer_3 {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -136,7 +128,7 @@
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
-            display-name = "GAME";
+            display-name = "NAV";
             bindings = <
 &bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none  &none  &none  &none  &none  &none
 &ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                            &none  &none  &none  &none  &none  &none
@@ -144,8 +136,39 @@
 &none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &none  &none  &none  &none  &none  &none  &to 0
                                     &none            &none            &none            &none            &none              &none  &none  &none  &none  &none
             >;
+        };
 
-            sensor-bindings = <&inc_dec_kp 0 0>;
+        layer_4 {
+            display-name = "NUM";
+            bindings = <
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none  &none  &none  &none  &none  &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                            &none  &none  &none  &none  &none  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                      &none  &none  &none  &none  &none  &none
+&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &none  &none  &none  &none  &none  &none  &to 0
+                                    &none            &none            &none            &none            &none              &none  &none  &none  &none  &none
+            >;
+        };
+
+        layer_5 {
+            display-name = "MENDIA";
+            bindings = <
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none  &none  &none  &none  &none  &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                            &none  &none  &none  &none  &none  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                      &none  &none  &none  &none  &none  &none
+&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &none  &none  &none  &none  &none  &none  &to 0
+                                    &none            &none            &none            &none            &none              &none  &none  &none  &none  &none
+            >;
+        };
+
+        layer_6 {
+            display-name = "FUNC";
+            bindings = <
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none  &none  &none  &none  &none  &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                            &none  &none  &none  &none  &none  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                      &none  &none  &none  &none  &none  &none
+&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &none  &none  &none  &none  &none  &none  &to 0
+                                    &none            &none            &none            &none            &none              &none  &none  &none  &none  &none
+            >;
         };
     };
 };
