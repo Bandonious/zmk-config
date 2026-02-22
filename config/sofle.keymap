@@ -94,7 +94,7 @@
 &trans  &trans        &trans        &trans            &trans          &trans                        &trans         &trans          &trans          &trans        &trans           &trans
 &trans  &trans        &trans        &trans            &trans          &trans                        &kp INS        &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &trans
 &trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                        &trans         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &trans        &trans        &trans            &trans          &trans  &trans    &trans      &kp K_REDO     &kp K_PASTE     &kp K_COPY      &kp K_CUT     &kp K_UNDO       &trans
+&trans  &trans        &trans        &trans            &trans          &trans  &trans    &trans      &kp LS(LC(Z))  &kp LC(V)       &kp LC(C)       &kp LC(X)     &kp LC(Z)        &trans
                       &trans        &trans            &trans          &trans  &trans    &kp RETURN  &kp BACKSPACE  &kp DELETE      &trans          &trans
             >;
         };
@@ -102,33 +102,33 @@
         layer_SYS {
             display-name = "SYS";
             bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans                    &trans  &trans           &trans             &trans         &trans         &trans
-&trans  &trans        &trans        &trans            &trans          &trans                    &trans  &trans           &trans             &trans         &trans         &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                    &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
-&trans  &trans        &trans        &trans            &trans          &trans  &trans    &trans  &trans  &trans           &trans             &trans         &trans         &trans
-                      &trans        &trans            &trans          &trans  &trans    &trans  &trans  &trans           &trans             &trans
+&trans          &trans           &trans      &trans       &trans         &trans                         &trans  &trans           &trans             &trans         &trans         &trans
+&kp GRAVE       &kp CARET        &kp POUND   &trans       &kp BACKSLASH  &kp PIPE                       &trans  &trans           &trans             &trans         &trans         &trans
+&kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DOLLAR  &kp PERCENT  &kp AMPERSAND  &kp AT_SIGN                    &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
+&trans          &trans           &trans      &trans       &kp MINUS      &kp UNDER    &trans    &trans  &trans  &trans           &trans             &trans         &trans         &trans
+                                 &trans      &trans       &trans         &trans       &trans    &trans  &trans  &trans           &trans             &trans
             >;
         };
 
         layer_NUM {
             display-name = "NUM";
             bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans                    &trans  &trans           &trans             &trans         &trans         &trans
-&trans  &trans        &trans        &trans            &trans          &trans                    &trans  &trans           &trans             &trans         &trans         &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                    &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
-&trans  &trans        &trans        &trans            &trans          &trans  &trans    &trans  &trans  &trans           &trans             &trans         &trans         &trans
-                      &trans        &trans            &trans          &trans  &trans    &trans  &trans  &trans           &trans             &trans
+&trans                &trans                 &trans           &trans           &trans           &trans                                   &trans  &trans           &trans             &trans         &trans         &trans
+&kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS                              &trans  &trans           &trans             &trans         &trans         &trans
+&kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS                             &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
+&trans                &kp KP_DOT             &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MULTIPLY  &trans          &trans  &trans  &trans           &trans             &trans         &trans         &trans
+                                             &trans           &trans           &kp KP_NUMBER_0  &kp KP_DIVIDE    &kp KP_EQUAL    &trans  &trans  &trans           &trans             &trans
             >;
         };
 
         layer_FUNC {
             display-name = "FUNC";
             bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans                    &trans  &trans           &trans             &trans         &trans         &trans
-&trans  &trans        &trans        &trans            &trans          &trans                    &trans  &trans           &trans             &trans         &trans         &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                    &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
-&trans  &trans        &trans        &trans            &trans          &trans  &trans    &trans  &trans  &trans           &trans             &trans         &trans         &trans
-                      &trans        &trans            &trans          &trans  &trans    &trans  &trans  &trans           &trans             &trans
+&trans        &trans  &trans   &trans   &trans   &trans                             &trans  &trans           &trans             &trans         &trans         &trans
+&kp C_BRI_UP  &kp F9  &kp F10  &kp F11  &kp F12  &kp PRINTSCREEN                    &trans  &trans           &trans             &trans         &trans         &trans
+&kp C_BRI_DN  &kp F5  &kp F6   &kp F7   &kp F8   &kp LG(LS(S))                      &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
+&trans        &trans  &kp F1   &kp F2   &kp F3   &trans           &trans    &trans  &trans  &trans           &trans             &trans         &trans         &trans
+                      &trans   &trans   &trans   &trans           &trans    &trans  &trans  &trans           &trans             &trans
             >;
         };
 
