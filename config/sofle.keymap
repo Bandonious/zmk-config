@@ -28,13 +28,6 @@
     };
 
     behaviors {
-        TD_SftCap: TD_shift-caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_shift-caps";
-            #binding-cells = <0>;
-            bindings = <&kp LSHFT>, <&caps_word>, <&kp CAPSLOCK>;
-        };
-
         mt_HRM: mt_HRM {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_HRM";
@@ -43,6 +36,22 @@
             #binding-cells = <2>;
             tapping-term-ms = <260>;
             flavor = "tap-preferred";
+        };
+
+        CapWL: CapWL {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPWL";
+            #binding-cells = <0>;
+            bindings = <&caps_word>, <&kp CAPS>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        delete {
+            bindings = <&kp DEL>;
+            key-positions = <53 56>;
         };
     };
 
@@ -60,11 +69,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC    &kp N1              &kp N2    &kp N3              &kp N4                  &kp N5                                        &kp N6                     &kp N7                   &kp N8               &kp N9    &kp N0               &kp DELETE
-&kp GRAVE  &kp Q               &kp W     &kp F               &kp P                   &kp B                                         &kp J                      &kp L                    &kp U                &kp Y     &kp SEMICOLON        &kp BSPC
-&kp TAB    &mt_HRM LEFT_WIN A  &kp R     &mt_HRM LEFT_ALT S  &mt_HRM LEFT_CONTROL T  &kp G                                         &kp M                      &mt_HRM RIGHT_CONTROL N  &mt_HRM RIGHT_ALT E  &kp I     &mt_HRM RIGHT_WIN O  &kp SQT
-&kp LSHFT  &kp Z               &kp X     &kp C               &kp D                   &kp V       &kp LEFT_ALT    &kp K_PLAY_PAUSE  &kp K                      &kp H                    &kp COMMA            &kp DOT   &kp FSLH             &kp RSHFT
-                               &kp LGUI  &kp LALT            &kp LCTRL               &TD_SftCap  &lt 1 SPACE     &lt 2 ENTER       &mt RIGHT_SHIFT BACKSPACE  &kp RCTRL                &kp RALT             &kp RGUI
+&kp ESC       &kp N1              &kp N2    &kp N3              &kp N4                  &kp N5                                                      &kp N6                     &kp N7                   &kp N8               &kp N9    &kp N0               &none
+&kp GRAVE     &kp Q               &kp W     &kp F               &kp P                   &kp B                                                       &kp J                      &kp L                    &kp U                &kp Y     &kp SEMICOLON        &none
+&none         &mt_HRM LEFT_WIN A  &kp R     &mt_HRM LEFT_ALT S  &mt_HRM LEFT_CONTROL T  &kp G                                                       &kp M                      &mt_HRM RIGHT_CONTROL N  &mt_HRM RIGHT_ALT E  &kp I     &mt_HRM RIGHT_WIN O  &kp SQT
+&kp LEFT_ALT  &kp Z               &kp X     &kp C               &kp D                   &kp V                     &kp LEFT_ALT    &kp K_PLAY_PAUSE  &kp K                      &kp H                    &kp COMMA            &kp DOT   &kp FSLH             &kp EXCLAMATION
+                                  &kp LGUI  &kp LALT            &kp LCTRL               &mt_HRM LEFT_SHIFT SPACE  &lt 1 TAB       &lt 2 ENTER       &mt RIGHT_SHIFT BACKSPACE  &mt RIGHT_CONTROL DEL    &kp RALT             &kp RGUI
             >;
 
             sensor-bindings =
@@ -84,11 +93,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans                &kp F1      &kp F2              &kp F3           &kp F4               &kp F5                                  &kp F6        &kp F7           &kp F8           &kp F9           &kp F10  &kp F11
-&kp NON_US_BACKSLASH  &kp PIPE    &kp LC(LEFT_ARROW)  &kp UP_ARROW     &kp LC(RIGHT_ARROW)  &kp MINUS                               &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none    &kp F12
-&kp CAPSLOCK          &caps_word  &kp LEFT_ARROW      &kp DOWN_ARROW   &kp RIGHT_ARROW      &kp UNDERSCORE                          &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none    &none
-&trans                &kp K_UNDO  &kp LEFT_BRACE      &kp RIGHT_BRACE  &kp LEFT_BRACKET     &kp RIGHT_BRACKET  &trans    &trans     &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans   &kp KP_NUMLOCK
-                                  &kp K_REDO          &trans           &trans               &trans             &trans    &kp EQUAL  &trans        &kp SLASH        &kp KP_NUMBER_0  &kp KP_DOT
+&trans                &kp F1                 &kp F2              &kp F3          &kp F4               &kp F5                                  &kp F6        &kp F7           &kp F8           &kp F9           &kp F10      &kp F11
+&kp BACKSLASH         &kp CARET              &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp AMPERSAND                           &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp HASH     &kp F12
+&kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp UNDERSCORE                          &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PERCENT  &none
+&kp K_UNDO            &kp K_REDO             &kp K_PASTE         &kp K_COPY      &kp LEFT_BRACKET     &kp RIGHT_BRACKET  &trans    &trans     &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOLLAR   &kp KP_NUMLOCK
+                                             &trans              &trans          &trans               &trans             &trans    &kp EQUAL  &trans        &kp SLASH        &kp KP_NUMBER_0  &kp KP_DOT
             >;
 
             sensor-bindings =
@@ -109,7 +118,7 @@
             bindings = <
 &kp C_SLEEP  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans      &trans    &trans    &trans     &trans   &trans
 &none        &kp INS       &kp PSCRN     &none         &none         &trans                          &kp PG_UP   &trans    &kp UP    &trans     &kp N0   &trans
-&trans       &none         &none         &none         &trans        &none                           &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&CapWL       &none         &none         &none         &trans        &none                           &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
 &trans       &none         &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &kp K_CALC  &trans    &trans    &trans     &trans   &trans
                            &trans        &trans        &trans        &trans        &trans    &trans  &trans      &trans    &trans    &trans
             >;
