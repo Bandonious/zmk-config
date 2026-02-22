@@ -63,6 +63,57 @@
         };
     };
 
+    macros {
+        undo_bd: undo_bd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(Z)>;
+            label = "UNDO_BD";
+        };
+
+        redo_bd: redo_bd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(RS(Z))>;
+            label = "REDO_BD";
+        };
+
+        cut_bd: cut_bd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(X)>;
+            label = "CUT_BD";
+        };
+
+        copy_bd: copy_bd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>;
+            label = "COPY_BD";
+        };
+
+        paste_bd: paste_bd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+            label = "PASTE_BD";
+        };
+
+        bullet: bullet {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_4 &kp KP_NUMBER_9>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "BULLET";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -104,7 +155,7 @@
             display-name = "SYS";
             bindings = <
 &trans          &trans           &trans      &trans       &trans         &trans                         &trans  &trans           &trans             &trans         &trans         &trans
-&kp GRAVE       &kp CARET        &kp POUND   &trans       &kp BACKSLASH  &kp PIPE                       &trans  &trans           &trans             &trans         &trans         &trans
+&kp GRAVE       &kp CARET        &kp POUND   &bullet      &kp BACKSLASH  &kp PIPE                       &trans  &trans           &trans             &trans         &trans         &trans
 &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DOLLAR  &kp PERCENT  &kp AMPERSAND  &kp AT_SIGN                    &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
 &trans          &trans           &trans      &trans       &kp MINUS      &kp UNDER    &trans    &trans  &trans  &trans           &trans             &trans         &trans         &trans
                                  &trans      &trans       &trans         &trans       &trans    &trans  &trans  &trans           &trans             &trans
