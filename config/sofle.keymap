@@ -206,11 +206,11 @@
         layer_ACT {
             display-name = "ACT";
             bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans                                 &trans      &trans           &trans             &trans         &trans         &trans
-&trans  &trans        &trans        &trans            &trans          &kp PRINTSCREEN                        &trans      &trans           &trans             &trans         &trans         &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LG(LS(S))                          &kp K_CALC  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
-&trans  &undo_bd      &cut_bd       &copy_bd          &paste_bd       &redo_bd         &trans      &trans    &redo_bd    &paste_bd        &copy_bd           &cut_bd        &undo_bd       &trans
-                      &trans        &trans            &mkp MB3        &mkp MB2         &mkp MB1    &mkp MB1  &mkp MB2    &mkp MCLK        &trans             &trans
+&trans  &trans        &trans        &trans            &trans          &trans                                 &trans            &trans           &trans             &trans         &trans         &trans
+&trans  &trans        &trans        &trans            &trans          &kp PRINTSCREEN                        &trans            &trans           &trans             &trans         &trans         &trans
+&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LG(LS(S))                          &kp K_CALCULATOR  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
+&trans  &undo_bd      &cut_bd       &copy_bd          &paste_bd       &redo_bd         &trans      &trans    &redo_bd          &paste_bd        &copy_bd           &cut_bd        &undo_bd       &trans
+                      &trans        &trans            &mkp MB3        &mkp MB2         &mkp MB1    &mkp MB1  &mkp MB2          &mkp MCLK        &trans             &trans
             >;
         };
 
