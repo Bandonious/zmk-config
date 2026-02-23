@@ -17,7 +17,7 @@
 &sensors {
     status = "okay";
     // Set this value to the number of physical clicks in one full turn
-    triggers-per-rotation = <20>; 
+    triggers-per-rotation = <15>; 
 };
 
 / {
