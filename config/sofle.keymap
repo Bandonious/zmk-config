@@ -143,11 +143,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&none           &kp N1              &kp N2              &kp N3                  &kp N4                &kp N5                                            &kp N6           &kp N7                 &kp N8                   &kp N9               &kp N0               &none
-&kp ESCAPE      &kp Q               &kp W               &kp F                   &kp P                 &kp B                                             &kp J            &kp L                  &kp U                    &kp Y                &kp SEMICOLON        &none
-&CapWL          &mt_HRM LEFT_WIN A  &mt_HRM LEFT_ALT R  &mt_HRM LEFT_CONTROL S  &mt_HRM LEFT_SHIFT T  &kp G                                             &kp M            &mt_HRM RIGHT_SHIFT N  &mt_HRM RIGHT_CONTROL E  &mt_HRM RIGHT_ALT I  &mt_HRM RIGHT_WIN O  &kp SQT
-&kp LG(PERIOD)  &kp Z               &kp X               &kp C                   &kp D                 &kp V            &kp LG(TAB)    &kp C_PLAY_PAUSE  &kp K            &kp H                  &kp COMMA                &kp DOT              &kp FSLH             &lt 5 EXCLAMATION
-                                    &kp LGUI            &kp LALT                &lt_bdx 6 ESCAPE      &lt_bdx 1 SPACE  &lt 5 TAB      &lt 2 ENTER       &lt 3 BACKSPACE  &lt_bdx 4 DEL          &kp RALT                 &kp RGUI
+&none             &kp N1              &kp N2              &kp N3                  &kp N4                &kp N5                                            &kp N6           &kp N7                 &kp N8                   &kp N9               &kp N0               &none
+&kp ESCAPE        &kp Q               &kp W               &kp F                   &kp P                 &kp B                                             &kp J            &kp L                  &kp U                    &kp Y                &kp SEMICOLON        &none
+&CapWL            &mt_HRM LEFT_WIN A  &mt_HRM LEFT_ALT R  &mt_HRM LEFT_CONTROL S  &mt_HRM LEFT_SHIFT T  &kp G                                             &kp M            &mt_HRM RIGHT_SHIFT N  &mt_HRM RIGHT_CONTROL E  &mt_HRM RIGHT_ALT I  &mt_HRM RIGHT_WIN O  &kp SQT
+&lt 5 LG(PERIOD)  &kp Z               &kp X               &kp C                   &kp D                 &kp V            &kp LG(TAB)    &kp C_PLAY_PAUSE  &kp K            &kp H                  &kp COMMA                &kp DOT              &kp FSLH             &lt 5 EXCLAMATION
+                                      &kp LGUI            &kp LALT                &lt_bdx 6 ESCAPE      &lt_bdx 1 SPACE  &lt 5 TAB      &lt 2 ENTER       &lt 3 BACKSPACE  &lt_bdx 4 DEL          &kp RALT                 &kp RGUI
             >;
 
             sensor-bindings =
